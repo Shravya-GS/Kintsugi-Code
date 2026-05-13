@@ -1,0 +1,41 @@
+.sim-btn {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 18px; border-radius: var(--radius); border: 1px solid;
+  cursor: pointer; text-align: left; font-family: var(--font);
+  transition: all 0.2s; background: var(--bg-card);
+}
+.sim-btn:hover { transform: translateX(4px); filter: brightness(1.1); }
+.sim-btn-firing { animation: shake 0.4s ease; }
+.sim-btn-label { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.sim-btn-desc { font-size: 12px; color: var(--text-muted); }
+.sim-btn-arrow { font-size: 14px; flex-shrink: 0; }
+.sim-spinner {
+  display: inline-block; width: 16px; height: 16px;
+  border: 2px solid currentColor; border-top-color: transparent;
+  border-radius: 50%; animation: spin 0.6s linear infinite;
+}
+
+.sim-result { background: #0d1508; border-color: rgba(0,212,170,0.3) !important; }
+.sim-rule-badge { margin-bottom: 12px; }
+.sim-json {
+  font-family: var(--mono); font-size: 11px; color: var(--teal);
+  background: rgba(0,0,0,0.4); padding: 12px; border-radius: 8px;
+  overflow-x: auto; white-space: pre-wrap; word-break: break-all;
+  max-height: 220px; overflow-y: auto;
+}
+
+.log-row {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 12px; padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  animation: fadeIn 0.3s ease both;
+}
+.log-rule {
+  font-size: 10px; font-weight: 800; width: 24px; height: 24px;
+  border-radius: 6px; background: var(--bg-secondary);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--teal); flex-shrink: 0; font-family: var(--mono);
+}
+.log-notif { font-size: 14px; }
+.log-msg { flex: 1; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.log-time { color: var(--text-muted); font-family: var(--mono); flex-shrink: 0; }
