@@ -55,8 +55,8 @@ export default function Simulator() {
     <div className="page anim-fade">
       <div className="page-header">
         <div>
-          <div className="label" style={{ marginBottom: 4 }}>HACKATHON DEMO</div>
-          <div className="page-title">Event <span>Simulator</span></div>
+          <div className="label" style={{ marginBottom: 4 }}>LIVE TESTING</div>
+          <div className="page-title">Simulation <span>Environment</span></div>
         </div>
         <div className={`badge ${apiStatus === 'online' ? 'badge-teal' : apiStatus === 'offline' ? 'badge-red' : 'badge-amber'}`}>
           {apiStatus === 'online' ? '🟢 API Online' : apiStatus === 'offline' ? '🔴 Offline (local)' : '🟡 Connecting…'}
