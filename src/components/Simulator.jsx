@@ -15,6 +15,8 @@ const COLOR_MAP = {
 export default function Simulator() {
   const { profile, fireNotification, events, apiStatus, paymentMethod, setPaymentMethod } = useApp();
   const [lastResult, setLastResult] = useState(null);
+  const [isLaunching, setIsLaunching] = useState(false);
+  const [launchTarget, setLaunchTarget] = useState(null);
   const [lastEventId, setLastEventId] = useState(null);
   const [firing, setFiring] = useState(null);
   const [latency, setLatency] = useState(null);
@@ -51,6 +53,13 @@ export default function Simulator() {
     }
   };
 
+  const launchApp = (target) => {
+    setPaymentMethod(target);
+    setLaunchTarget(target);
+    setIsLaunching(true);
+    setTimeout(() => setIsLaunching(false), 2000);
+  };
+
   return (
     <div className="page anim-fade">
       <div className="page-header">
@@ -69,18 +78,31 @@ export default function Simulator() {
         <div className="payment-toggle">
           <button 
             className={`pay-opt ${paymentMethod === 'GPay' ? 'active' : ''}`}
-            onClick={() => setPaymentMethod('GPay')}
+            onClick={() => launchApp('GPay')}
           >
             <span className="pay-icon">🇬</span> GPay
           </button>
           <button 
             className={`pay-opt ${paymentMethod === 'PhonePe' ? 'active' : ''}`}
-            onClick={() => setPaymentMethod('PhonePe')}
+            onClick={() => launchApp('PhonePe')}
           >
             <span className="pay-icon">🇵</span> PhonePe
           </button>
         </div>
       </div>
+
+      {/* Launch Animation Overlay */}
+      {isLaunching && (
+        <div className={`launch-overlay ${launchTarget.toLowerCase()}-bg anim-fade`}>
+          <div className="launch-content anim-pop">
+            <div className="launch-logo">
+              {launchTarget === 'GPay' ? '🇬' : '🇵'}
+            </div>
+            <div className="launch-text">Opening {launchTarget}...</div>
+            <div className="launch-loader" />
+          </div>
+        </div>
+      )}
 
 
       {/* Event Buttons */}
