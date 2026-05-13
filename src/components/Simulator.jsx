@@ -63,24 +63,6 @@ export default function Simulator() {
         </div>
       </div>
 
-      {/* API Status Banner */}
-      <div className="card sim-api-card" style={{ marginBottom: 16, borderColor: apiStatus === 'online' ? 'rgba(0,212,170,0.3)' : 'rgba(246,173,85,0.3)' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <span style={{ fontSize: 22 }}>{apiStatus === 'online' ? '⚡' : '🔁'}</span>
-          <div>
-            <div style={{ fontSize: 13, fontWeight: 700, color: apiStatus === 'online' ? 'var(--teal)' : 'var(--amber)' }}>
-              {apiStatus === 'online' ? 'Connected to FastAPI Backend' : 'Running in offline mode'}
-            </div>
-            <div style={{ fontSize: 12, color: 'var(--text-muted)', marginTop: 2 }}>
-              {apiStatus === 'online'
-                ? 'POST /api/evaluate → Python decision engine on :8000'
-                : 'API unavailable — using in-browser JS engine as fallback'}
-            </div>
-          </div>
-          {latency && <div className="sim-latency">{latency}ms</div>}
-        </div>
-        {error && <div className="sim-error">⚠️ {error}</div>}
-      </div>
 
       {/* Event Buttons */}
       <div className="stack">
