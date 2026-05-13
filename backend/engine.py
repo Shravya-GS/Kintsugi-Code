@@ -43,8 +43,7 @@ def evaluate_event(event: EventPayload, profile: Profile) -> dict:
 
     # ── RULE 4: CRITICAL RISK ZONE ──
     if event.event_type == "geofence_enter" and location_type in CRITICAL_LOCATION_TYPES:
-        if hour >= 21 or hour <= 4:
-            # Get Smart Advice from Gemini
+        # Get Smart Advice from Gemini
             savings = profile.monthlySalary * 0.5
             smart_msg = llm.generate_smart_advice(event.model_dump(), profile.model_dump(), 4)
             final_msg = smart_msg if smart_msg else (
