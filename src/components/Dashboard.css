@@ -1,44 +1,48 @@
-.header-shield { font-size: 36px; filter: drop-shadow(0 0 12px var(--teal-glow)); animation: glow-pulse 3s infinite; }
+.header-shield { font-size: 36px; filter: drop-shadow(0 0 15px var(--teal-glow)); animation: glow-pulse 3s infinite; }
 
 /* Savings card */
-.savings-card { background: linear-gradient(135deg, #0d1f1a 0%, #0a1520 100%); border-color: rgba(0,212,170,0.2) !important; }
-.savings-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.savings-card { 
+  background: linear-gradient(145deg, rgba(13, 31, 26, 0.9) 0%, rgba(10, 21, 32, 0.9) 100%); 
+  border-color: rgba(0, 255, 204, 0.15) !important; 
+}
+.savings-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .savings-info { flex: 1; }
-.savings-amount { font-size: 32px; font-weight: 800; color: var(--teal); font-family: var(--mono); margin-bottom: 4px; }
-.savings-sub { font-size: 12px; color: var(--text-muted); }
-.savings-stat { text-align: center; }
-.savings-stat-val { font-size: 20px; font-weight: 700; font-family: var(--mono); margin-top: 4px; }
+.savings-amount { font-size: 34px; font-weight: 800; color: var(--teal); font-family: var(--mono); margin-bottom: 6px; letter-spacing: -1px; }
+.savings-sub { font-size: 13px; color: var(--text-secondary); opacity: 0.8; }
+.savings-stat { text-align: left; }
+.savings-stat-val { font-size: 22px; font-weight: 800; font-family: var(--mono); margin-top: 6px; }
 
 /* Savings ring */
 .savings-ring-wrap { position: relative; width: 140px; height: 140px; flex-shrink: 0; }
-.savings-ring-wrap svg { position: absolute; top: 0; left: 0; transform: rotate(-90deg); }
+.savings-ring-wrap svg { position: absolute; top: 0; left: 0; transform: rotate(-90deg); filter: drop-shadow(0 0 8px var(--teal-glow)); }
 .savings-ring-center {
   position: absolute; inset: 0; display: flex; flex-direction: column;
   align-items: center; justify-content: center;
 }
-.savings-ring-pct { font-size: 26px; font-weight: 900; color: var(--teal); font-family: var(--mono); }
-.savings-ring-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; color: var(--text-muted); }
+.savings-ring-pct { font-size: 28px; font-weight: 800; color: var(--teal); font-family: var(--mono); }
+.savings-ring-label { font-size: 10px; font-weight: 800; letter-spacing: 1.5px; color: var(--text-muted); }
 
 /* Daily */
 .daily-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
-.daily-amount { font-size: 28px; font-weight: 800; font-family: var(--mono); }
-.daily-limit { font-size: 16px; font-weight: 500; color: var(--text-muted); }
-.daily-badge { font-size: 12px !important; }
+.daily-amount { font-size: 30px; font-weight: 800; font-family: var(--mono); letter-spacing: -0.5px; }
+.daily-limit { font-size: 16px; font-weight: 500; color: var(--text-muted); opacity: 0.7; }
+.daily-badge { font-size: 11px !important; text-transform: uppercase; }
 
 /* Category bars */
-.cat-bar-row { display: flex; align-items: flex-start; gap: 12px; }
-.cat-bar-icon { font-size: 20px; margin-top: 2px; flex-shrink: 0; }
+.cat-bar-row { display: flex; align-items: flex-start; gap: 14px; }
+.cat-bar-icon { font-size: 22px; margin-top: 4px; flex-shrink: 0; }
 .cat-bar-content { flex: 1; }
-.cat-bar-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
-.cat-bar-name { font-size: 14px; font-weight: 600; }
-.cat-bar-nums { font-size: 13px; font-weight: 700; font-family: var(--mono); }
-.cat-bar-of { color: var(--text-muted); font-weight: 400; }
-.cat-bar-remaining { font-size: 11px; margin-top: 4px; }
+.cat-bar-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+.cat-bar-name { font-size: 15px; font-weight: 700; color: var(--text-primary); }
+.cat-bar-nums { font-size: 13px; font-weight: 800; font-family: var(--mono); }
+.cat-bar-of { color: var(--text-muted); font-weight: 500; }
+.cat-bar-remaining { font-size: 12px; margin-top: 6px; font-weight: 500; }
 
 /* Transactions */
-.tx-row { display: flex; align-items: center; gap: 12px; padding: 12px 0; }
-.tx-icon { font-size: 22px; width: 40px; height: 40px; background: var(--bg-secondary); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.tx-row { display: flex; align-items: center; gap: 14px; padding: 14px 0; transition: transform 0.2s; cursor: pointer; }
+.tx-row:hover { transform: translateX(4px); }
+.tx-icon { font-size: 22px; width: 44px; height: 44px; background: rgba(255,255,255,0.04); border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .tx-info { flex: 1; }
-.tx-merchant { font-size: 14px; font-weight: 600; }
-.tx-meta { font-size: 12px; color: var(--text-muted); margin-top: 2px; text-transform: capitalize; }
-.tx-amount { font-size: 14px; font-weight: 700; color: var(--red); font-family: var(--mono); }
+.tx-merchant { font-size: 15px; font-weight: 700; color: var(--text-primary); }
+.tx-meta { font-size: 12px; color: var(--text-muted); margin-top: 4px; font-weight: 500; }
+.tx-amount { font-size: 15px; font-weight: 800; color: var(--red); font-family: var(--mono); }
