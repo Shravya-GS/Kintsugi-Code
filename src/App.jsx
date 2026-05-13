@@ -1,5 +1,5 @@
-import React from 'react';
 import { useApp } from './context/AppContext';
+import Auth from './components/Auth';
 import Dashboard from './components/Dashboard';
 import Simulator from './components/Simulator';
 import Settings from './components/Settings';
@@ -36,7 +36,11 @@ function SettingsIcon({ active }) {
 }
 
 export default function App() {
-  const { activeTab, setActiveTab, notification } = useApp();
+  const { activeTab, setActiveTab, notification, isAuthenticated } = useApp();
+
+  if (!isAuthenticated) {
+    return <Auth />;
+  }
 
   return (
     <div className="app-shell">

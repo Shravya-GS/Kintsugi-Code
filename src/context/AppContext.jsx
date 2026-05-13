@@ -30,6 +30,7 @@ export function AppProvider({ children }) {
   const [events, setEvents] = useState([]);
   const [apiStatus, setApiStatus] = useState('connecting'); // 'connecting' | 'online' | 'offline'
   const [paymentMethod, setPaymentMethod] = useState('GPay');
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   // Load profile + dashboard from API on mount
   useEffect(() => {
@@ -103,6 +104,7 @@ export function AppProvider({ children }) {
       events, setEvents,
       apiStatus, refreshDashboard,
       paymentMethod, setPaymentMethod,
+      isAuthenticated, setIsAuthenticated,
     }}>
       {children}
     </AppContext.Provider>
