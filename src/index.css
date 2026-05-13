@@ -89,9 +89,9 @@ html, body, #root {
 
 /* Bottom tab nav */
 .tab-nav {
-  position: fixed; bottom: 20px; left: 20px; right: 20px;
+  position: absolute; bottom: 16px; left: 16px; right: 16px;
   height: 64px;
-  background: rgba(10,15,30,0.8);
+  background: rgba(10,15,30,0.85);
   backdrop-filter: blur(16px);
   border: 1px solid var(--glass-border);
   border-radius: 32px;
