@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { RadialBarChart, RadialBar, ResponsiveContainer, Cell } from 'recharts';
 import { useApp } from '../context/AppContext';
+import SafeZoneMap from './SafeZoneMap';
 import './Dashboard.css';
 
 function fmt(n) { return '₹' + Number(n).toLocaleString('en-IN'); }
@@ -137,6 +138,16 @@ export default function Dashboard() {
               spent={spent.categories[cat] || 0} budget={budget}
               color={CAT_COLORS[cat]} icon={CAT_ICONS[cat]} />
           ))}
+        </div>
+      </div>
+
+      {/* Safety Zone Map Section */}
+      <div className="card" style={{ marginBottom: 16 }}>
+        <div className="label">GEOFENCE PROTECTOR</div>
+        <div style={{ fontSize: 13, fontWeight: 600, marginTop: 4 }}>Live Proximity Monitor</div>
+        <SafeZoneMap />
+        <div style={{ marginTop: 12, fontSize: 12, color: 'var(--text-muted)' }}>
+          You are currently <b>1.2km</b> away from the nearest <span style={{ color: 'var(--red)' }}>Critical Risk Zone</span>.
         </div>
       </div>
 

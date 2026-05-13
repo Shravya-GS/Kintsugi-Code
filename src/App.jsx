@@ -1,7 +1,6 @@
 import React from 'react';
 import { useApp } from './context/AppContext';
 import Dashboard from './components/Dashboard';
-import MapView from './components/MapView';
 import Simulator from './components/Simulator';
 import Settings from './components/Settings';
 import NotificationOverlay from './components/NotificationOverlay';
@@ -9,7 +8,6 @@ import './App.css';
 
 const NAV = [
   { id: 'dashboard', label: 'Home', icon: HomeIcon },
-  { id: 'map',       label: 'Map',  icon: MapIcon },
   { id: 'simulator', label: 'Demo', icon: ZapIcon },
   { id: 'settings',  label: 'Settings', icon: SettingsIcon },
 ];
@@ -18,14 +16,6 @@ function HomeIcon({ active }) {
   return (
     <svg width="22" height="22" viewBox="0 0 24 24" fill={active ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
-    </svg>
-  );
-}
-function MapIcon({ active }) {
-  return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill={active ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/>
-      <line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/>
     </svg>
   );
 }
@@ -67,7 +57,6 @@ export default function App() {
       {/* Page Content */}
       <main className="app-main">
         {activeTab === 'dashboard' && <Dashboard />}
-        {activeTab === 'map'       && <MapView />}
         {activeTab === 'simulator' && <Simulator />}
         {activeTab === 'settings'  && <Settings />}
       </main>
