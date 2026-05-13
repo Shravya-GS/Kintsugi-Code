@@ -8,7 +8,7 @@ import './App.css';
 
 const NAV = [
   { id: 'dashboard', label: 'Home', icon: HomeIcon },
-  { id: 'simulator', label: 'Demo', icon: ZapIcon },
+  { id: 'simulator', label: 'Simulation', icon: ZapIcon },
   { id: 'settings',  label: 'Settings', icon: SettingsIcon },
 ];
 
