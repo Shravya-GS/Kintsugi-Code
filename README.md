@@ -127,18 +127,4 @@ Kintsugi-Code/
 - [ESLint Documentation](https://eslint.org)
 - [Vite Plugin React](https://github.com/vitejs/vite-plugin-react)
 
-## 📄 License
 
-This project is open source and available under the MIT License.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 💬 Questions or Issues?
-
-Feel free to open an [issue](https://github.com/Shravya-GS/Kintsugi-Code/issues) on GitHub if you have any questions or encounter any problems.
-
----
-
-**Made with ✨ by [Shravya-GS](https://github.com/Shravya-GS)**
