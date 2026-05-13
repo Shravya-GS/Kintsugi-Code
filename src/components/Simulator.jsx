@@ -131,29 +131,6 @@ export default function Simulator() {
         })}
       </div>
 
-      {/* Engine Output */}
-      {lastResult && (
-        <div className="card sim-result anim-slide" style={{ marginTop: 16 }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
-            <div className="label">ENGINE OUTPUT</div>
-            <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
-              {latency && <span className="sim-latency">{latency}ms</span>}
-              <span style={{ fontSize: 11, color: 'var(--text-muted)' }}>{apiStatus === 'online' ? 'via API' : 'local'}</span>
-            </div>
-          </div>
-          <div className="sim-rule-badge">
-            {lastResult.rule === 1 && <span className="badge badge-teal">Rule 1 — Silent ✓</span>}
-            {lastResult.rule === 2 && <span className="badge badge-amber">Rule 2 — Daily Limit Alert ⚠️</span>}
-            {lastResult.rule === 3 && <span className="badge badge-blue">Rule 3 — Geofence Pre-Alert 📍</span>}
-            {lastResult.rule === 4 && <span className="badge badge-red">Rule 4 — Critical Override 🚨</span>}
-          </div>
-          <pre className="sim-json">{JSON.stringify(
-            { ...lastResult, message: lastResult.message ? lastResult.message.slice(0, 90) + '…' : undefined },
-            null, 2
-          )}</pre>
-        </div>
-      )}
-
       {/* Event Log */}
       {events.length > 0 && (
         <div className="card" style={{ marginTop: 16, marginBottom: 16 }}>

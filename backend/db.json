@@ -12,16 +12,35 @@
     }
   },
   "spent": {
-    "daily": 740,
+    "daily": 3390.0,
     "categories": {
-      "dining": 1750,
+      "dining": 2200.0,
       "shopping": 1200,
       "transport": 420,
       "fuel": 900,
-      "entertainment": 600
+      "entertainment": 600,
+      "hospital": 2200.0
     }
   },
   "transactions": [
+    {
+      "merchant": "Swiggy",
+      "amount": 450.0,
+      "category": "dining",
+      "id": 1778660758231,
+      "timestamp": "2026-05-13T13:55:58.232007",
+      "time": "01:55 PM",
+      "icon": "🍽️"
+    },
+    {
+      "merchant": "Manipal Hospital",
+      "amount": 2200.0,
+      "category": "hospital",
+      "id": 1778660748527,
+      "timestamp": "2026-05-13T13:55:48.527878",
+      "time": "01:55 PM",
+      "icon": "🏥"
+    },
     {
       "id": 1,
       "merchant": "Swiggy",
@@ -68,5 +87,100 @@
       "timestamp": "2026-05-13T12:41:26.535913"
     }
   ],
-  "events": []
+  "events": [
+    {
+      "id": 1778660775670,
+      "timestamp": "2026-05-13T13:56:15.670090",
+      "result": {
+        "show_notification": false,
+        "rule": 1
+      },
+      "payload_summary": {
+        "event_type": "geofence_enter",
+        "location_name": "Vapebar & Lounge",
+        "merchant": null
+      }
+    },
+    {
+      "id": 1778660774887,
+      "timestamp": "2026-05-13T13:56:14.887163",
+      "result": {
+        "show_notification": false,
+        "rule": 1
+      },
+      "payload_summary": {
+        "event_type": "geofence_enter",
+        "location_name": "Vapebar & Lounge",
+        "merchant": null
+      }
+    },
+    {
+      "id": 1778660773868,
+      "timestamp": "2026-05-13T13:56:13.868621",
+      "result": {
+        "show_notification": false,
+        "rule": 1
+      },
+      "payload_summary": {
+        "event_type": "geofence_enter",
+        "location_name": "Vapebar & Lounge",
+        "merchant": null
+      }
+    },
+    {
+      "id": 1778660765298,
+      "timestamp": "2026-05-13T13:56:05.298461",
+      "result": {
+        "show_notification": false,
+        "rule": 1
+      },
+      "payload_summary": {
+        "event_type": "geofence_enter",
+        "location_name": "Vapebar & Lounge",
+        "merchant": null
+      }
+    },
+    {
+      "id": 1778660758225,
+      "timestamp": "2026-05-13T13:55:58.225683",
+      "result": {
+        "show_notification": true,
+        "trigger_high_volume_alert": false,
+        "rule": 2,
+        "overspend_amount": 180.0,
+        "category": "dining",
+        "transaction_amount": 450.0,
+        "merchant": "Swiggy",
+        "daily_spent": 1380.0,
+        "daily_limit": 1200.0,
+        "message": "You've gone over today's limit on dining 🍽️. How about cooking something cozy at home tonight — your wallet (and taste buds) will thank you!"
+      },
+      "payload_summary": {
+        "event_type": "sms_transaction",
+        "location_name": "Swiggy Delivery",
+        "merchant": "Swiggy"
+      }
+    },
+    {
+      "id": 1778660748520,
+      "timestamp": "2026-05-13T13:55:48.520167",
+      "result": {
+        "show_notification": true,
+        "trigger_high_volume_alert": false,
+        "rule": 2,
+        "overspend_amount": 1600.0,
+        "category": "hospital",
+        "transaction_amount": 2200.0,
+        "merchant": "Manipal Hospital",
+        "daily_spent": 2800.0,
+        "daily_limit": 1200.0,
+        "message": "We noticed a medical expense — please don't stress about the limit 🏥. Your health comes first. We'll help you review non-essential spending over the next few days to balance things out."
+      },
+      "payload_summary": {
+        "event_type": "sms_transaction",
+        "location_name": "Manipal Hospital",
+        "merchant": "Manipal Hospital"
+      }
+    }
+  ]
 }
