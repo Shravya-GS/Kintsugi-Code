@@ -13,7 +13,7 @@ const COLOR_MAP = {
 };
 
 export default function Simulator() {
-  const { profile, fireNotification, events, apiStatus } = useApp();
+  const { profile, fireNotification, events, apiStatus, paymentMethod, setPaymentMethod } = useApp();
   const [lastResult, setLastResult] = useState(null);
   const [lastEventId, setLastEventId] = useState(null);
   const [firing, setFiring] = useState(null);
@@ -29,7 +29,7 @@ export default function Simulator() {
       let result;
       if (apiStatus === 'online') {
         // 🔥 Call the real FastAPI backend
-        result = await apiEvaluate(mockEvt.event);
+        result = await apiEvaluate({ ...mockEvt.event, payment_source: paymentMethod });
         setLatency(Math.round(performance.now() - t0));
       } else {
         // 🔁 Fallback to local engine if API is down
@@ -60,6 +60,25 @@ export default function Simulator() {
         </div>
         <div className={`badge ${apiStatus === 'online' ? 'badge-teal' : apiStatus === 'offline' ? 'badge-red' : 'badge-amber'}`}>
           {apiStatus === 'online' ? '🟢 API Online' : apiStatus === 'offline' ? '🔴 Offline (local)' : '🟡 Connecting…'}
+        </div>
+      </div>
+
+      {/* Payment Method Selector */}
+      <div className="card" style={{ marginBottom: 16, padding: '12px 16px' }}>
+        <div className="label" style={{ marginBottom: 10 }}>PAYMENT SOURCE</div>
+        <div className="payment-toggle">
+          <button 
+            className={`pay-opt ${paymentMethod === 'GPay' ? 'active' : ''}`}
+            onClick={() => setPaymentMethod('GPay')}
+          >
+            <span className="pay-icon">🇬</span> GPay
+          </button>
+          <button 
+            className={`pay-opt ${paymentMethod === 'PhonePe' ? 'active' : ''}`}
+            onClick={() => setPaymentMethod('PhonePe')}
+          >
+            <span className="pay-icon">🇵</span> PhonePe
+          </button>
         </div>
       </div>
 

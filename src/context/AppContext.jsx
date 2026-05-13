@@ -29,6 +29,7 @@ export function AppProvider({ children }) {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [events, setEvents] = useState([]);
   const [apiStatus, setApiStatus] = useState('connecting'); // 'connecting' | 'online' | 'offline'
+  const [paymentMethod, setPaymentMethod] = useState('GPay');
 
   // Load profile + dashboard from API on mount
   useEffect(() => {
@@ -101,6 +102,7 @@ export function AppProvider({ children }) {
       activeTab, setActiveTab,
       events, setEvents,
       apiStatus, refreshDashboard,
+      paymentMethod, setPaymentMethod,
     }}>
       {children}
     </AppContext.Provider>
